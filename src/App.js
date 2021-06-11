@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home/Home';
-import Navbar from './layouts/Navbar';
+import Navbar from './layouts/Navbar/Navbar';
 import Footer from './layouts/Footer/Footer';
 
 import 'bootstrap';
@@ -8,7 +8,7 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="App" style={{ height: "1000px" }}>
+    <div className="App">
       <Router>
         <Navbar />
         <Switch>
