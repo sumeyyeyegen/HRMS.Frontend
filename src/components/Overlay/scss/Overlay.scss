@@ -1,0 +1,11 @@
+@import '../App.scss';
+
+ul li{
+  text-transform: capitalize;
+  font-size: x-large;
+  color: $color-5;
+}
+
+ul li:hover{
+  color: $color;
+}
