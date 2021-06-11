@@ -1,6 +1,6 @@
 import React from 'react'
-import overlayImage from '../assets/images/Home_ Header.svg';
-import './Overlay.scss'
+import overlayImage from '../../assets/images/Home_ Header.svg';
+import './scss/Overlay.scss'
 
 function Overlay() {
   return (
