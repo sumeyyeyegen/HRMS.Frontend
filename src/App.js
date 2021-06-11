@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home/Home';
-import Navbar from './layouts/Navbar/Navbar';
+import Navbar from './layouts/Navbar';
 import Footer from './layouts/Footer/Footer';
 
 import 'bootstrap';
