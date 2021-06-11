@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+$color: #7952b3;
+$color-2: #fff;
+//#d0d7e7
+$color-3: #E6E0FF;
+//#E6E0FF
+$color-4: #F0EDFF;
+$color-5: #ACA3CF;
+$small-size: 0.375rem;
+$small-size-2: 0.625rem;
+$small-size-3: 0.875rem;
+$medium-size: 1rem;
+$medium-size-2: 1.375rem;
+$medium-size-3: 1.75rem;
+$large-size: 2.5rem;
+$large-size-2: 3.5rem;
+$large-size-3: 4.5rem;
+
+.App{
+  background-color: $color-4;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Bootstrap
+$navbar-light-active-color: $color;
+$primary: $color;
+$secondary: $color-2;
+$success: #70c0b6;
+$danger: #ea6f6f;
+$white: #edeef2;
+$light: $color-3;
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+.rounded {
+  border-radius: $small-size-2 !important;
+}
+.rounded-1 {
+  border-radius: $small-size-3 !important;
+}
+.rounded-2 {
+  border-radius: $medium-size !important;
+}
+.rounded-3 {
+  border-radius: $medium-size-2 !important;
+}
