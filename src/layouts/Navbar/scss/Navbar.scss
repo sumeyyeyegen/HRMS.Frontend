@@ -1,0 +1,58 @@
+@import '../../../App.scss';
+
+nav {
+  .navbar-title{
+    font-size: 45px;
+    text-shadow: 1px 1px 3px $color;
+  }
+  .list-item {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    font-size: large;
+    span{
+      i{
+        margin-right: 6px;
+      }
+      
+    }
+    &:hover{
+      border-bottom: $navbar-light-active-color solid 0.1rem;
+      border-radius: 0.1rem;
+    }
+  }
+  .login-btn{
+    margin-right: 16px;
+  }
+  .login-btn, .signup-btn{
+    border: $navbar-light-active-color solid 0.1rem;
+    color: $color;
+  }
+  .login-btn:hover, .signup-btn:hover{
+    background-color: $color;
+    color: #fff;
+  }
+}
+
+nav + div {
+  padding-top: 6rem;
+}
+
+@media screen and (min-width: 992px) {
+  #navbarMenu{
+    display: contents !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav{
+    .list-item{
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// Bootstrap Icons
+@import '../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
