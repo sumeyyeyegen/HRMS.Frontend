@@ -5,6 +5,8 @@ import Footer from './layouts/Footer/Footer';
 
 import 'bootstrap';
 import './App.scss';
+import JobAdvertDetail from './pages/JobAdvertisementDetail/JobAdvertDetail';
+import CandidateRegister from './components/CandidateRegister/CandidateRegister';
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" component={Home} />
+          <Route path="/" exact component={Home} />
+          <Route path="/jobAdvertDetail" component={JobAdvertDetail} />
+          <Route path="/candidateRegister" component={CandidateRegister} />
         </Switch>
         <Footer />
       </Router>
