@@ -1,0 +1,24 @@
+.dropdown {
+  img.user-image{
+  width: 2em;
+  height: auto;
+  }
+
+  button{
+    height: 22px;
+    padding: 0;
+    border: none;
+  }
+
+  button:focus{
+    box-shadow: none !important;
+  }
+
+  .dropdown-menu{
+    padding: 8px;
+    .dropdown-menu-item{
+      text-decoration: none;
+      padding-bottom: 4px;
+    }
+  }
+}

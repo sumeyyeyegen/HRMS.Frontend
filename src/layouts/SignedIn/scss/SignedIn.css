@@ -1,0 +1,25 @@
+.dropdown img.user-image {
+  width: 2em;
+  height: auto;
+}
+
+.dropdown button {
+  height: 22px;
+  padding: 0;
+  border: none;
+}
+
+.dropdown button:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.dropdown .dropdown-menu {
+  padding: 8px;
+}
+
+.dropdown .dropdown-menu .dropdown-menu-item {
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+/*# sourceMappingURL=SignedIn.css.map */
