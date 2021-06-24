@@ -1,16 +1,23 @@
 import React from 'react'
 import './scss/JobAdvertisement.scss'
+import { Link } from 'react-router-dom'
 
-function JobAdvertisement() {
+function JobAdvertisement({ jobAdvertisement }) {
   return (
-    <div className="col-sm">
+    <div className="col-lg-4 col-12">
       <div className="card">
         <div className="card-body">
-          <h5 className="card-text mt-2 fw-bold">Job Name</h5>
-          <p>Job Description</p>
-          <div>
-            Create at + Application deadline
-          </div>
+          <Link to="/jobAdvertDetail">
+            <h4>{jobAdvertisement.job.title}</h4>
+          </Link>
+
+          <small className="text-muted">
+            <b>{jobAdvertisement.employer.companyName}</b> - {jobAdvertisement.employer.webSite}
+          </small>
+          <p>{jobAdvertisement.jobDescription}</p>
+          <small>
+            <div><i className="bi bi-geo-alt-fill"></i> {jobAdvertisement.city.name}  {jobAdvertisement.applicationDeadline}</div>
+          </small>
         </div>
       </div>
     </div>
