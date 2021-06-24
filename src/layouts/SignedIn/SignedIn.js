@@ -5,20 +5,13 @@ import UserImage from '../../assets/images/userImages2.jpg'
 import { signOut } from '../../store/actions/isAuthenticatedActions'
 import './scss/SignedIn.scss';
 
-function SignedIn() {
-
-  const dispatch = useDispatch();
-
-  const handleSignOut = () => {
-    dispatch(signOut());
-  }
+function SignedIn({ signOut }) {
 
   const [toggleMenuValue, setToggleMenuValue] = useState(false);
 
   const toggleMenu = () => {
     setToggleMenuValue(!toggleMenuValue)
   }
-
   const toggle = (toggleMenuValue) ? "show" : "advert-modal";
   return (
     <div>
@@ -30,10 +23,10 @@ function SignedIn() {
         </div>
         <div className={`dropdown-menu ${toggle}`}>
           <Link to="/info" className="d-block dropdown-menu-item">Bilgilerim</Link>
-          <Link to="/" className="dropdown-menu-item" onClick={() => handleSignOut()}>Çıkış yap</Link>
+          <Link to="/" className="dropdown-menu-item" onClick={() => signOut()}>Çıkış yap</Link>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

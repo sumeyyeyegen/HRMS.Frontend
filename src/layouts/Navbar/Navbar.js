@@ -1,13 +1,18 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './scss/Navbar.scss'
-import SignedOut from '../SignedOut/SignedOut'
 import SignedIn from '../SignedIn/SignedIn'
+import SignedOut from '../SignedOut/SignedOut'
 
 function Navbar() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const { isAuthenticated } = useSelector(state => state.isAuthenticated)
+  const handleSignOut = () => {
+    setIsAuthenticated(false);
+  }
+  const handleSignIn = () => {
+    setIsAuthenticated(true);
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,9 +37,7 @@ function Navbar() {
             <Link className="list-item" to="/"><span><i className="bi bi-card-text" />Post</span></Link>
           </ul>
           <div className="">
-            {
-              isAuthenticated ? <SignedIn /> : <SignedOut />
-            }
+            {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut signIn={handleSignIn} />}
           </div>
         </div>
       </div >
