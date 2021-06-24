@@ -1,8 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import './scss/Navbar.scss'
+import SignedOut from '../SignedOut/SignedOut'
+import SignedIn from '../SignedIn/SignedIn'
 
 function Navbar() {
+
+  const { isAuthenticated } = useSelector(state => state.isAuthenticated)
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -26,12 +32,9 @@ function Navbar() {
             <Link className="list-item" to="/"><span><i className="bi bi-card-text" />Post</span></Link>
           </ul>
           <div className="">
-            <Link to='/' className='btn login-btn py-2 px-4 rounded shadow'>
-              Log in
-            </Link>
-            <Link to='/' className='btn signup-btn py-2 px-4 rounded shadow'>
-              Sign up
-            </Link>
+            {
+              isAuthenticated ? <SignedIn /> : <SignedOut />
+            }
           </div>
         </div>
       </div >
