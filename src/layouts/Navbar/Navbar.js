@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './scss/Navbar.scss'
-import SignedIn from '../SignedIn/SignedIn'
-import SignedOut from '../SignedOut/SignedOut'
+import SignedIn from '../../components/SignedIn/SignedIn'
+import SignedOut from '../../components/SignedOut/SignedOut'
 
 function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand fw-bolder navbar-title" to="#">HRMS</Link>
+        <Link className="navbar-brand fw-bolder navbar-title" to="/">HRMS</Link>
         <button
           className="navbar-toggler"
           type="button"
