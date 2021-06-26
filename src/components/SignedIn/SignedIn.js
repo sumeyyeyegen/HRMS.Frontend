@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 import UserImage from '../../assets/images/userImages2.jpg'
-import { signOut } from '../../store/actions/isAuthenticatedActions'
 import './scss/SignedIn.scss';
 
 function SignedIn({ signOut }) {
