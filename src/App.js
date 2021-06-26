@@ -6,7 +6,7 @@ import Footer from './layouts/Footer/Footer';
 import 'bootstrap';
 import './App.scss';
 import JobAdvertDetail from './pages/JobAdvertisementDetail/JobAdvertDetail';
-import CandidateRegister from './components/CandidateRegister/CandidateRegister';
+import CandidateRegister from './pages/CandidateRegister/CandidateRegister';
 
 function App() {
   return (
