@@ -10,8 +10,8 @@ function Candidate({ candidate }) {
           <img className="card-img-top" src={userImage2} alt="userImage" />
           <h5 className="card-text mt-2 fw-bold">{candidate.firstName} {candidate.lastName}</h5>
           <div className="d-flex justify-content-between">
-            <button className="btn btn-success"></button>
-            <button className="btn btn-primary">Cv İncele</button>
+            <button className="btn btn-success"><i class="bi bi-download me-1"></i>Download</button>
+            <button className="btn btn-primary"><i class="bi bi-search me-1"></i>İncele</button>
           </div>
         </div>
       </div>
