@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../JobAdvertisements/scss/JobAdvertisements.scss'
 import JobAdvertisement from '../JobAdvertisement/JobAdvertisement'
-import JobAdvertisementsService from '../../services/jobAdvertisementsService'
+import JobAdvertisementsService from '../../services/JobAdvertisementsService'
 
 function JobAdvertisements() {
   const [jobAdvertisements, setJobAdvertisements] = useState([]);
