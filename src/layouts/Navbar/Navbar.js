@@ -32,9 +32,6 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarMenu">
           <ul className="navbar-nav mb-2 mb-lg-0">
             <Link className="list-item" to="/"><span><i className="bi bi-house" />Home</span></Link>
-            <Link className="list-item" to="/"><span><i className="bi bi-search" />Search</span></Link>
-            <Link className="list-item" to="/"><span><i className="bi bi-info-circle" />About</span></Link>
-            <Link className="list-item" to="/"><span><i className="bi bi-card-text" />Post</span></Link>
           </ul>
           <div className="">
             {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut signIn={handleSignIn} />}
