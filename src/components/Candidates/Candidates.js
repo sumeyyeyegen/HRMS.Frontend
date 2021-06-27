@@ -15,8 +15,8 @@ function Candidates() {
   return (
     <div className="row">
       {
-        candidates.map(candidate => {
-          return <Candidate candidate={candidate} />
+        candidates.map((candidate, index) => {
+          return <Candidate key={index} candidate={candidate} />
         })
       }
     </div>
