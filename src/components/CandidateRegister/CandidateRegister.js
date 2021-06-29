@@ -4,8 +4,14 @@ import * as Yup from 'yup'
 import KodlamaIoTextInput from '../../utilities/customFormControls/KodlamaIoTextInput'
 import { useToasts } from 'react-toast-notifications';
 import CandidatesService from '../../services/CandidatesService';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCandidate } from '../../store/actions/candidateActions';
 
 function CandidateRegister() {
+
+  const dispatch = useDispatch();
+
+  const candidates = useSelector(state => state.candidates)
 
   const { addToast } = useToasts();
 
@@ -30,13 +36,13 @@ function CandidateRegister() {
       .required("Lütfen Şifrenizi Doğrulayın."),
   })
 
-  const onSubmit = (values) => {
+  const handleSubmit = (values) => {
     let candidatesService = new CandidatesService();
+    dispatch(addCandidate(values))
     candidatesService.registerCandidate(values).then(result => {
-      addToast(result.data.message, { appearance: result.data.success ? "success" : "error", autoDismiss: true });
+      addToast(result.data.message, { appearance: result.data.success ? "success" : "error" });
     })
   }
-
   return (
     <div className="container">
       <div className="row d-flex justify-content-center">
@@ -45,24 +51,17 @@ function CandidateRegister() {
             initialValues={initialValues}
             //yup ile gelen özellik. zorunlu alanları girmemizi sağlar
             validationSchema={schema}
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
           >
-            {formik => (
+            {() => (
               <Form>
-                <label htmlFor="firstName">İsim</label>
-                <KodlamaIoTextInput name="firstName" id="firstName" placeholder="First name" value={formik.values.firstName} />
-                <label htmlFor="lastName">Soyisim</label>
-                <KodlamaIoTextInput name="lastName" id="lastName" placeholder="Last name" value={formik.values.lastName} />
-                <label htmlFor="lastName">TC Kimlik Numarası</label>
-                <KodlamaIoTextInput name="identityNumber" id="identityNumber" placeholder="Identity number" value={formik.values.identityNumber} />
-                <label htmlFor="lastName">Email</label>
-                <KodlamaIoTextInput name="email" id="email" placeholder="Email" value={formik.values.email} />
-                <label htmlFor="lastName">Doğum Yılı</label>
-                <KodlamaIoTextInput name="birthYear" id="birthYear" placeholder="Birth year" value={formik.values.birthYear} />
-                <label htmlFor="lastName">Şifre</label>
-                <KodlamaIoTextInput name="password" id="password" placeholder="Password" value={formik.values.password} />
-                <label htmlFor="lastName">Şifre Tekrar</label>
-                <KodlamaIoTextInput name="passwordRepeat" id="passwordRepeat" placeholder="Password repeat" />
+                <KodlamaIoTextInput name="firstName" label="İsim" />
+                <KodlamaIoTextInput name="lastName" label="Soyisim" />
+                <KodlamaIoTextInput name="identityNumber" label="TC Kimlik Numarası" />
+                <KodlamaIoTextInput name="email" label="Email" />
+                <KodlamaIoTextInput name="birthYear" label="Doğum Yılı" />
+                <KodlamaIoTextInput name="password" label="Şifre" />
+                <KodlamaIoTextInput name="passwordRepeat" label="Şifre Tekrar" />
                 <button type="submit" className="btn btn-success">Submit</button>
               </Form>
             )}
