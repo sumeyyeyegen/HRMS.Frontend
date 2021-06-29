@@ -3,17 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import { Provider } from 'react-redux'
+import { ToastProvider } from 'react-toast-notifications';
+import { Provider } from 'react-redux'
 import { configureStore } from './store/configureStore'
 
-//const store = configureStore();
+const store = configureStore();
 
 ReactDOM.render(
-  // <Provider store={store}>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  // </Provider>
+  <Provider store={store}>
+    <ToastProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ToastProvider>
+  </Provider>,
   document.getElementById('root')
 );
 
