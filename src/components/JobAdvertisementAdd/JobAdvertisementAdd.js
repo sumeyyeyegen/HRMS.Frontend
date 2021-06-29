@@ -3,6 +3,10 @@ import React, { useState } from 'react'
 import JobAdvertisementsService from '../../services/JobAdvertisementsService'
 import { useDispatch, useSelector } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
+import WorkTimesService from '../../services/WorkTimesService'
+import WorkPlacesService from '../../services/WorkPlacesService'
+import CitiesService from '../../services/CitiesService'
+import JobsService from '../../services/JobsService'
 
 
 function JobAdvertisementAdd() {
@@ -51,6 +55,18 @@ function JobAdvertisementAdd() {
       addToast(result.data.message, { appearance: result.data.success ? "success" : "error" });
     })
   }
+
+  useEffect(() => {
+    let workTimeService = new WorkTimesService();
+    let workPlaceService = new WorkPlacesService();
+    let jobService = new JobsService();
+    let cityService = new CitiesService();
+
+    workPlaceService.getAllPlaces().then(result => setWorkPlaces(result.data.data))
+    workTimeService.getAllWorkTimes().then(result => setWorkTimes(result.data.data))
+    jobService.getAllJobs().then(result => setJobs(result.data.data))
+    cityService.getAllCities().then(result => setCities(result.data.data))
+  }, [])
 
   return (
     <div className="container">
