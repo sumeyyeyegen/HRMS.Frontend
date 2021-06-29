@@ -22,7 +22,28 @@ export default class JobAdvertisementsService {
       }
     })
   }
+
   getActiveJobAdvertisements() {
     return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrue`);
+  }
+
+  getActiveJobAdvertisementsReleaseDateAsc() {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByReleaseDateAsc`);
+  }
+
+  getActiveJobAdvertisementsReleaseDateDesc() {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByReleaseDateDesc`);
+  }
+
+  getActiveJobAdvertisementsApplicationDeadlineAsc() {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByApplicationDeadlineAsc`);
+  }
+
+  getActiveJobAdvertisementsApplicationDeadlineDesc() {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByApplicationDeadlineDesc`);
+  }
+
+  getActiveJobAdvertisementsAndEmployerId() {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueAndEmployerId`);
   }
 }
