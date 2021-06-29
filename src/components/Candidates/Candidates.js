@@ -1,15 +1,18 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CandidatesService from '../../services/CandidatesService';
 import Candidate from '../Candidate/Candidate'
+import { useDispatch, useSelector } from 'react-redux';
+import { addCandidate } from '../../store/actions/candidateActions';
+import { toast } from 'react-toastify'
 
 function Candidates() {
+  const dispatch = useDispatch();
   const [candidates, setCandidates] = useState([]);
 
   useEffect(() => {
-    let candidates = new CandidatesService();
-    candidates.getAllCandidates().then(result => { setCandidates(result.data.data) })
+    let candidatesService = new CandidatesService();
+    candidatesService.getAllCandidates().then(result => { setCandidates(result.data.data) });
+    toast.success(`Ekleme işlemi başarılı`);
   }, [])
 
   return (
