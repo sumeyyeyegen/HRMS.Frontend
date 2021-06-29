@@ -7,7 +7,17 @@ export default class CandidatesService {
     return axios.get(`${EMPLOYERS_REST_API_URL}getall`);
   }
 
-  registerCandidate() {
-    return axios.get(`${EMPLOYERS_REST_API_URL}register`);
+  registerCandidate(data) {
+    return axios({
+      method: "POST",
+      url: `${CANDIDATES_REST_API_URL}register`,
+      data: {
+        firstName: data.companyName,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        webSite: data.webSite,
+        password: data.password
+      }
+    })
   }
 }
