@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const EMPLOYERS_REST_API_URL = "http://localhost:8080/api/employers/"
 
-export default class CandidatesService {
+export default class EmployersService {
   getAllEmployers() {
     return axios.get(`${EMPLOYERS_REST_API_URL}getall`);
   }
