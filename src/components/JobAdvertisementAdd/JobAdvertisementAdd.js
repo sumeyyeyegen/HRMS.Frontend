@@ -1,5 +1,5 @@
 import { Form, Formik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 import JobAdvertisementsService from '../../services/JobAdvertisementsService'
 import { useDispatch, useSelector } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
@@ -7,9 +7,10 @@ import { useToasts } from 'react-toast-notifications';
 
 function JobAdvertisementAdd() {
 
-  //const dispatch = useDispatch();
-
-  // const candidates = useSelector(state => state.candidates)
+  const [workTimes, setWorkTimes] = useState([]);
+  const [workPlaces, setWorkPlaces] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [jobs, setJobs] = useState([]);
 
   const { addToast } = useToasts();
 
