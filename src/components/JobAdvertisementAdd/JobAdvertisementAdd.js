@@ -1,15 +1,21 @@
-import { Form, Formik } from 'formik';
-import React, { useState } from 'react'
+import { Formik, Form } from 'formik';
+import React, { useEffect, useState } from 'react'
+import * as Yup from 'yup'
 import JobAdvertisementsService from '../../services/JobAdvertisementsService'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
 import WorkTimesService from '../../services/WorkTimesService'
 import WorkPlacesService from '../../services/WorkPlacesService'
 import CitiesService from '../../services/CitiesService'
 import JobsService from '../../services/JobsService'
+import { addJobAdvertisement } from '../../store/actions/jobAdvertisementActions';
+import KodlamaIoDropdown from '../../utilities/customFormControls/KodlamaIoDropdown';
+import './scss/JobAdvertAdd.scss'
 
 
 function JobAdvertisementAdd() {
+
+  const dispatch = useDispatch();
 
   const [workTimes, setWorkTimes] = useState([]);
   const [workPlaces, setWorkPlaces] = useState([]);
@@ -42,18 +48,19 @@ function JobAdvertisementAdd() {
     cityId: Yup.number().required("Lütfen şehir bilgisini giriniz"),
     employerId: Yup.number().required("Lütfen iş veren bilgisini giriniz"),
     openPositions: Yup.number().required("Lütfen açık pozisyon sayısını giriniz"),
-    releaseDate: Yup.date().nullable().required(""),
-    applicationDeadline: Yup.date().nullable().required(""),
+    releaseDate: Yup.date(new Date(Date.now())).nullable().required(""),
+    applicationDeadline: Yup.date().min(new Date(Date.now()), "Geçersiz tarih").nullable().required(""),
     workPlaceId: Yup.number().required("İş yeri bilgisini giriniz"),
     workTimeId: Yup.number().required("İş zaman bilgisini giriniz")
   })
 
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, { resetForm }) => {
     let jobAdvertService = new JobAdvertisementsService();
-    dispatch(addCandidate(values))
+    dispatch(addJobAdvertisement(values))
     jobAdvertService.addJobAdvert(values).then(result => {
       addToast(result.data.message, { appearance: result.data.success ? "success" : "error" });
     })
+    resetForm();
   }
 
   useEffect(() => {
@@ -62,39 +69,35 @@ function JobAdvertisementAdd() {
     let jobService = new JobsService();
     let cityService = new CitiesService();
 
+    cityService.getAllCities().then(result => setCities(result.data.data))
+    jobService.getAllJobs().then(result => setJobs(result.data.data))
     workPlaceService.getAllPlaces().then(result => setWorkPlaces(result.data.data))
     workTimeService.getAllWorkTimes().then(result => setWorkTimes(result.data.data))
-    jobService.getAllJobs().then(result => setJobs(result.data.data))
-    cityService.getAllCities().then(result => setCities(result.data.data))
   }, [])
 
   return (
     <div className="container">
       <div className="row d-flex justify-content-center">
-        <div className="col-6">
+        <div className="col-12 col-md-9 col-lg-6">
           <Formik
             initialValues={initialValues}
-            //yup ile gelen özellik. zorunlu alanları girmemizi sağlar
             validationSchema={schema}
             onSubmit={handleSubmit}
-          >
-            {() => (
-              <Form>
-                <KodlamaIoTextInput name="jobId" label="İş" />
-                <KodlamaIoTextInput name="jobDescription" label="Açıklama" />
-                <KodlamaIoTextInput name="minSalary" label="Minimum Tutar" />
-                <KodlamaIoTextInput name="maxSalary" label="Maksimum Tutar" />
-                <KodlamaIoTextInput name="active" label="Durum" />
-                <KodlamaIoTextInput name="cityId" label="Şehir" />
-                <KodlamaIoTextInput name="workPlaceId" label="İş Yeri" />
-                <KodlamaIoTextInput name="workTimeId" label="İş zamanı" />
-                <KodlamaIoTextInput name="employerId" label="İşveren" />
-                <KodlamaIoTextInput name="openPositions" label="Açık pozisyon" />
-                <KodlamaIoTextInput name="releaseDate" label="Yayın tarihi" />
-                <KodlamaIoTextInput name="releaseDate" label="Bitiş tarihi" />
-                <button type="submit" className="btn btn-success">Submit</button>
-              </Form>
-            )}
+          >{({
+            values,
+            touched,
+            errors,
+            handleSubmit,
+            handleChange
+          }) => (
+            <Form onSubmit={handleSubmit}>
+              <KodlamaIoDropdown errors={errors} touched={touched} id="cityId" states={cities} value={values.cityId} handleChange={handleChange} label="Şehir seç.." description="Şehir" />
+              <KodlamaIoDropdown errors={errors} touched={touched} id="jobId" states={jobs} value={values.jobId} handleChange={handleChange} label="İş tanımı seç.." description="İş Tanımı" />
+              <KodlamaIoDropdown errors={errors} touched={touched} id="workPlaceId" states={workPlaces} value={values.workPlaceId} handleChange={handleChange} label="İş yeri seç.." description="İş Yeri" />
+              <KodlamaIoDropdown errors={errors} touched={touched} id="workTimeId" states={workTimes} value={values.workTimeId} handleChange={handleChange} label="İş zamanı seç.." description="İş Zamanı" />
+
+            </Form>
+          )}
           </Formik>
         </div></div>
     </div >
