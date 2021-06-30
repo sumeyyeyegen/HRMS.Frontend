@@ -2,10 +2,12 @@
 
 import { combineReducers } from "redux";
 import candidateReducer from "./reducers/candidateReducer";
+import jobAdvertisementReducer from "./reducers/jobAdvertisementReducer";
 
 
 const rootReducer = combineReducers({
-  candidates: candidateReducer
+  candidates: candidateReducer,
+  jobAdvertisements: jobAdvertisementReducer
 })
 
 export default rootReducer;
