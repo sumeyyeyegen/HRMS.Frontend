@@ -4,15 +4,12 @@ import * as Yup from 'yup'
 import KodlamaIoTextInput from '../../utilities/customFormControls/KodlamaIoTextInput'
 import { useToasts } from 'react-toast-notifications';
 import CandidatesService from '../../services/CandidatesService';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addCandidate } from '../../store/actions/candidateActions';
 
 function CandidateRegister() {
 
   const dispatch = useDispatch();
-
-  const candidates = useSelector(state => state.candidates)
-
   const { addToast } = useToasts();
 
   const initialValues = {
