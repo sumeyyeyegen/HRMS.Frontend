@@ -10,7 +10,7 @@ export default class JobsService {
   addJob(data) {
     return axios({
       method: "POST",
-      url: `${EMPLOYEES_REST_API_URL}add`,
+      url: `${JOBS_REST_API_URL}add`,
       data: {
         title: data.title
       }
