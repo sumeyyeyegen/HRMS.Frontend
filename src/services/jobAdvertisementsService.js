@@ -4,23 +4,8 @@ const JOB_ADVERTİSEMENTS_REST_API_URL = "http://localhost:8080/api/jobadvertise
 
 export default class JobAdvertisementsService {
 
-  addJobAdvert(data) {
-    return axios({
-      method: "POST",
-      url: `${JOB_ADVERTİSEMENTS_REST_API_URL}add`,
-      data: {
-        jobId: data.jobId,
-        cityId: data.cityId,
-        employerId: data.employerId,
-        jobDescription: data.jobDescription,
-        active: data.active,
-        minSalary: data.minSalary,
-        maxSalary: data.maxSalary,
-        openPositions: data.openPositions,
-        releaseDate: data.releaseDate,
-        applicationDeadline: data.applicationDeadline
-      }
-    })
+  async addJobAdvert(data) {
+    return await axios.post(`${JOB_ADVERTİSEMENTS_REST_API_URL}add`, data)
   }
 
   getActiveJobAdvertisements() {
