@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import '../JobAdvertisements/scss/JobAdvertisements.scss'
 import JobAdvertisement from '../JobAdvertisement/JobAdvertisement'
-import JobAdvertisementsService from '../../services/JobAdvertisementsService'
+import { useDispatch, useSelector } from 'react-redux'
+import { getJobAdvertisementApi } from '../../store/actions/jobAdvertisementActions'
 
 function JobAdvertisements() {
-  const [jobAdvertisements, setJobAdvertisements] = useState([]);
+  const jobAdvertisements = useSelector(state => state.jobAdvertisements)
+
+  const dispatch = useDispatch()
   useEffect(() => {
-    let jobAdvertisementsService = new JobAdvertisementsService()
-    jobAdvertisementsService.getActiveJobAdvertisements().then(result => { setJobAdvertisements(result.data.data) })
-  }, [])
+    dispatch(getJobAdvertisementApi())
+  }, [dispatch])
+
+  console.log(jobAdvertisements);
   return (
     <div className="row mt-5">
-      {console.log(jobAdvertisements)}
       {
         jobAdvertisements && jobAdvertisements.map((jobAdvertisement, index) => {
           return <JobAdvertisement key={index} jobAdvertisement={jobAdvertisement} />
