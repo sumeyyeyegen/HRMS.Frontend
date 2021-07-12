@@ -1,1 +1,1 @@
-export const jobAdvertisement = [];
+export let jobAdvertisements = [];
