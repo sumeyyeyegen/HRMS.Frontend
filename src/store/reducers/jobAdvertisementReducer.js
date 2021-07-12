@@ -1,8 +1,8 @@
-import { ADD_JOB_ADVERTISEMENT, DELETE_JOB_ADVERTISEMENT } from '../actions/jobAdvertisementActions'
-import { jobAdvertisement } from '../initialStates/jobAdvertisement'
+import { ADD_JOB_ADVERTISEMENT, DELETE_JOB_ADVERTISEMENT, GET_JOB_ADVERTİSEMENT } from '../actions/jobAdvertisementActions'
+import { jobAdvertisements } from '../initialStates/jobAdvertisement';
 
 const initialState = {
-  jobAdvertisement: jobAdvertisement,
+  jobAdvertisements: jobAdvertisements,
 }
 
 function jobAdvertisementReducer(state = initialState, { type, payload }) {
@@ -12,8 +12,11 @@ function jobAdvertisementReducer(state = initialState, { type, payload }) {
 
       return {
         ...state,
-        jobAdvertisements: [...state.jobAdvertisement, { jobAdvertisement: payload }]
+        jobAdvertisements: { ...state.jobAdvertisements, payload }
       }
+
+    case GET_JOB_ADVERTİSEMENT:
+      return payload;
 
     case DELETE_JOB_ADVERTISEMENT:
       return {
@@ -21,7 +24,7 @@ function jobAdvertisementReducer(state = initialState, { type, payload }) {
         jobAdvertisements: state.jobAdvertisements.filter(jobAdvertisement => jobAdvertisement.id !== payload.id)
       }
     default:
-      return { ...state }
+      return state.jobAdvertisements;
   }
 }
 
