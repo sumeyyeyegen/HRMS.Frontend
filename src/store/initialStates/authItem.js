@@ -1,0 +1,1 @@
+export const authItem = [{ loggedIn: false, user: { id: 17, email: "sumeyyeyegen@gmail.com", password: "1234", userType: 0 } }]
