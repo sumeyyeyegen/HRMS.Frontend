@@ -4,7 +4,7 @@ import './scss/Overlay.scss'
 
 function Overlay() {
   return (
-    <div className="row">
+    <div className="row mb-5">
       <div className="col-sm">
         <img src={overlayImage} alt="" className="img-overlay" />
       </div>
