@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+// import CandidateCvService from '../../services/CandidateCvsService'
 
 function CandidateCv() {
-  return (
-    <div>
+  useEffect(() => {
+    // const candidateCvService = new CandidateCvService();
 
+  }, [])
+  return (
+    <div className="container">
+      <div className="card">
+        <div className="card-body">
+
+        </div>
+      </div>
     </div>
   )
 }
