@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,GAAG,AAAA,aAAa,CAAA;EACd,gBAAgB,EAAE,KAAK;EACvB,aAAa,EAAE,IAAI;CAUpB;;AAZD,AAGE,GAHC,AAAA,aAAa,CAGd,aAAa,CAAA;EACX,aAAa,EAAC,GAAG;EACjB,OAAO,EAAE,IAAI;CACd;;AANH,AAOE,GAPC,AAAA,aAAa,CAOd,sBAAsB,CAAA;EACpB,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI;EACnB,cAAc,EAAE,IAAI;CACrB",
     "sources": [
         "Candidate.scss"
     ],
