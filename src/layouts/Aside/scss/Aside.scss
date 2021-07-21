@@ -1,0 +1,28 @@
+@import '../../../App.scss';
+
+aside {
+  background-color: $color-3;
+  border-radius: 10px;
+  .list{
+  list-style: none;
+  border-radius: 10px;
+  .card-img-top{
+    border-radius: 10px;
+  }
+  li.list-item{
+    text-decoration: none;    
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: $primary;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  li.list-item:hover,:focus{
+    background-color: $color;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+ }
+}
