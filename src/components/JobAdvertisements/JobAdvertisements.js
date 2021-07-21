@@ -11,10 +11,8 @@ function JobAdvertisements() {
   useEffect(() => {
     dispatch(getJobAdvertisementApi())
   }, [dispatch])
-
-  console.log(jobAdvertisements);
   return (
-    <div className="row mt-5">
+    <div className="row">
       {
         jobAdvertisements && jobAdvertisements.map((jobAdvertisement, index) => {
           return <JobAdvertisement key={index} jobAdvertisement={jobAdvertisement} />
