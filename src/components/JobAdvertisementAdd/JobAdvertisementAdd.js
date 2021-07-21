@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 import JobAdvertisementsService from '../../services/JobAdvertisementsService'
 // import { useDispatch } from 'react-redux';
-import { useToasts } from 'react-toast-notifications';
+// import { useToasts } from 'react-toast-notifications';
 import WorkTimesService from '../../services/WorkTimesService'
 import WorkPlacesService from '../../services/WorkPlacesService'
 import CitiesService from '../../services/CitiesService'
@@ -25,7 +25,7 @@ function JobAdvertisementAdd() {
   const [cities, setCities] = useState([]);
   const [jobs, setJobs] = useState([]);
 
-  const { addToast } = useToasts();
+  // const { addToast } = useToasts();
 
   useEffect(() => {
     let workTimeService = new WorkTimesService();
