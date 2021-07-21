@@ -1,10 +1,23 @@
-import React from 'react'
+// import React, { useEffect, useState } from 'react'
+// import CandidateCvsService from '../../services/CandidateCvsService'
+// import CandidateCv from '../CandidateCv/CandidateCv';
 
-function CandidateCvs() {
-  return (
-    <div>
-    </div>
-  )
-}
+// function CandidateCvs() {
+//   const [cvs, setCvs] = useState([]);
+//   useEffect(() => {
+//     const candidateCvService = new CandidateCvsService();
+//     candidateCvService.getAll().then(result => { setCvs(result.data.data) });
+//   }, [])
+//   console.log(cvs);
+//   return (
+//     <div>
+//       {
+//         cvs.length && cvs.map(cv => {
+//           return <CandidateCv key={cv.id} cv={cv} />
+//         })
+//       }
+//     </div>
+//   )
+// }
 
-export default CandidateCvs
+// export default CandidateCvs
