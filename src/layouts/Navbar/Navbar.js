@@ -31,7 +31,8 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarMenu">
           <ul className="navbar-nav mb-2 mb-lg-0">
-            <Link className="list-item" to="/"><span><i className="bi bi-house" />Home</span></Link>
+            <Link className="list-item" to="/"><span><i className="bi bi-house" />Ana Sayfa</span></Link>
+            <Link className="list-item" to="/jobAdverts"><span><i className="bi bi-card-list"></i>İş İlanları</span></Link>
           </ul>
           <div className="">
             {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut signIn={handleSignIn} />}
