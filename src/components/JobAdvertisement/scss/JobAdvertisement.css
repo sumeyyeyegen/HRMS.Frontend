@@ -1,4 +1,9 @@
-.card .card-body h4 {
+.job-item {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.job-item h4 {
   font-weight: 700;
 }
 /*# sourceMappingURL=JobAdvertisement.css.map */

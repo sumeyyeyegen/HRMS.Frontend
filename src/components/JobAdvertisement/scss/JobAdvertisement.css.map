@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AACE,KADG,CAAC,UAAU,CACd,EAAE,CAAA;EACA,WAAW,EAAE,GAAG;CACjB",
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EACP,gBAAgB,EAAE,KAAK;EACvB,aAAa,EAAE,IAAI;CAIpB;;AAND,AAGE,SAHO,CAGP,EAAE,CAAA;EACA,WAAW,EAAE,GAAG;CACjB",
     "sources": [
         "JobAdvertisement.scss"
     ],
