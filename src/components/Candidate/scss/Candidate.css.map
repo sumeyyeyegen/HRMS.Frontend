@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,GAAG,AAAA,aAAa,CAAA;EACd,gBAAgB,EAAE,KAAK;EACvB,aAAa,EAAE,IAAI;CAUpB;;AAZD,AAGE,GAHC,AAAA,aAAa,CAGd,aAAa,CAAA;EACX,aAAa,EAAC,GAAG;EACjB,OAAO,EAAE,IAAI;CACd;;AANH,AAOE,GAPC,AAAA,aAAa,CAOd,sBAAsB,CAAA;EACpB,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI;EACnB,cAAc,EAAE,IAAI;CACrB",
-    "sources": [
-        "Candidate.scss"
-    ],
-    "names": [],
-    "file": "Candidate.css"
-}
+{"version":3,"sources":["Candidate.scss","Candidate.css"],"names":[],"mappings":"AAAA;EACE,uBAAA;EACA,mBAAA;ACCF;ADAE;EACE,kBAAA;EACA,aAAA;ACEJ;ADAE;EACE,kBAAA;EACA,mBAAA;EACA,oBAAA;ACEJ","file":"Candidate.css"}

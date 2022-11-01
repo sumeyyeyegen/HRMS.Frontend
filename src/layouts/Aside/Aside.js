@@ -1,5 +1,5 @@
 import React from 'react'
-import './scss/Aside.scss'
+import './scss/Aside.css'
 import userImage2 from '../../assets/images/userImages2.jpg'
 
 function Aside() {

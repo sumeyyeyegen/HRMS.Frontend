@@ -1,4 +1,4 @@
-import { ADD_JOB_ADVERTISEMENT, DELETE_JOB_ADVERTISEMENT, GET_JOB_ADVERTİSEMENT } from '../actions/jobAdvertisementActions'
+import { ADD_JOB_ADVERTISEMENT, DELETE_JOB_ADVERTISEMENT, GET_JOB_ADVERTISEMENT } from '../actions/jobAdvertisementActions'
 import { jobAdvertisements } from '../initialStates/jobAdvertisement';
 
 const initialState = {
@@ -6,7 +6,7 @@ const initialState = {
 }
 
 function jobAdvertisementReducer(state = initialState, { type, payload }) {
-
+  console.log(payload);
   switch (type) {
     case ADD_JOB_ADVERTISEMENT:
 
@@ -15,7 +15,7 @@ function jobAdvertisementReducer(state = initialState, { type, payload }) {
         jobAdvertisements: { ...state.jobAdvertisements, payload }
       }
 
-    case GET_JOB_ADVERTİSEMENT:
+    case GET_JOB_ADVERTISEMENT:
       return payload;
 
     case DELETE_JOB_ADVERTISEMENT:

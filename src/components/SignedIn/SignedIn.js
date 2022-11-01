@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import UserImage from '../../assets/images/userImages2.jpg'
-import './scss/SignedIn.scss';
+import './scss/SignedIn.css';
 
 function SignedIn({ signOut }) {
 

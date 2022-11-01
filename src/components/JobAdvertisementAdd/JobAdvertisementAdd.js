@@ -9,7 +9,7 @@ import WorkPlacesService from '../../services/WorkPlacesService'
 import CitiesService from '../../services/CitiesService'
 import JobsService from '../../services/JobsService'
 import KodlamaIoTextArea from '../../utilities/customFormControls/KodlamaIoTextArea';
-import './scss/JobAdvertAdd.scss'
+import './scss/JobAdvertAdd.css'
 import KodlamaIoTextInput from '../../utilities/customFormControls/KodlamaIoTextInput';
 import KodlamaIoDatetimeLocal from '../../utilities/customFormControls/KodlamaIoDatetimeLocal';
 import KodlamaIoDropdown from '../../utilities/customFormControls/KodlamaIoDropdown';

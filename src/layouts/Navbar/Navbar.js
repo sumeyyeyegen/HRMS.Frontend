@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './scss/Navbar.scss'
+import './scss/Navbar.css'
 import SignedIn from '../../components/SignedIn/SignedIn'
 import SignedOut from '../../components/SignedOut/SignedOut'
 

@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,SAAS,CAAA;EACP,gBAAgB,EAAE,KAAK;EACvB,aAAa,EAAE,IAAI;CAIpB;;AAND,AAGE,SAHO,CAGP,EAAE,CAAA;EACA,WAAW,EAAE,GAAG;CACjB",
-    "sources": [
-        "JobAdvertisement.scss"
-    ],
-    "names": [],
-    "file": "JobAdvertisement.css"
-}
+{"version":3,"sources":["JobAdvertisement.scss","JobAdvertisement.css"],"names":[],"mappings":"AAAA;EACE,uBAAA;EACA,mBAAA;ACCF;ADAE;EACE,gBAAA;ACEJ","file":"JobAdvertisement.css"}

@@ -1,6 +1,8 @@
 import axios from 'axios'
+import { getJobAdvertisements } from '../store/actions/jobAdvertisementActions'
 
 const JOB_ADVERTİSEMENTS_REST_API_URL = "http://localhost:8080/api/jobadvertisements/"
+
 
 export default class JobAdvertisementsService {
 
@@ -8,27 +10,45 @@ export default class JobAdvertisementsService {
     return await axios.post(`${JOB_ADVERTİSEMENTS_REST_API_URL}add`, data)
   }
 
-  getActiveJobAdvertisements() {
-    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrue`);
+  async getAll(dispatch) {
+    return await axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getall`).then(res =>{
+      dispatch(getJobAdvertisements(res.data.data))
+    })
   }
 
-  getActiveJobAdvertisementsReleaseDateAsc() {
-    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByReleaseDateAsc`);
+  async getActiveJobAdvertisements(dispatch) {
+    return await axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrue`).then(res =>{
+      dispatch(getJobAdvertisements(res.data.data));
+    })
   }
 
-  getActiveJobAdvertisementsReleaseDateDesc() {
-    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByReleaseDateDesc`);
+  getActiveJobAdvertisementsReleaseDateAsc(dispatch) {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByReleaseDateAsc`).then(res =>{
+      dispatch(getJobAdvertisements(res.data.data))
+    })
   }
 
-  getActiveJobAdvertisementsApplicationDeadlineAsc() {
-    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByApplicationDeadlineAsc`);
+  getActiveJobAdvertisementsReleaseDateDesc(dispatch) {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByReleaseDateDesc`).then(res =>{
+      dispatch(getJobAdvertisements(res.data.data))
+    })
   }
 
-  getActiveJobAdvertisementsApplicationDeadlineDesc() {
-    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByApplicationDeadlineDesc`);
+  getActiveJobAdvertisementsApplicationDeadlineAsc(dispatch) {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByApplicationDeadlineAsc`).then(res =>{
+      dispatch(getJobAdvertisements(res.data.data))
+    })
   }
 
-  getActiveJobAdvertisementsAndEmployerId() {
-    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueAndEmployerId`);
+  getActiveJobAdvertisementsApplicationDeadlineDesc(dispatch) {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueOrderByApplicationDeadlineDesc`).then(res =>{
+      dispatch(getJobAdvertisements(res.data.data))
+    })
+  }
+
+  getActiveJobAdvertisementsAndEmployerId(dispatch) {
+    return axios.get(`${JOB_ADVERTİSEMENTS_REST_API_URL}getByIsActiveTrueAndEmployerId`).then(res =>{
+      dispatch(getJobAdvertisements(res.data.data))
+    })
   }
 }

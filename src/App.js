@@ -4,7 +4,7 @@ import Navbar from './layouts/Navbar/Navbar';
 import Footer from './layouts/Footer/Footer';
 
 import 'bootstrap';
-import './App.scss';
+import './App.css';
 import JobAdvertDetail from './pages/JobAdvertisementDetail/JobAdvertDetail';
 import CandidateRegister from './pages/CandidateRegister/CandidateRegister';
 import CandidateCv from './components/CandidateCv/CandidateCv'

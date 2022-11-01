@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import userImage3 from '../../assets/images/userImages3.jpg'
-import './scss/Candidate.scss'
+import './scss/Candidate.css'
 
 function Candidate({ candidate }) {
   return (

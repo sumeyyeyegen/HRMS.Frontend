@@ -1,5 +1,5 @@
 import React from 'react'
-import './scss/JobAdvertisement.scss'
+import './scss/JobAdvertisement.css'
 import { Link } from 'react-router-dom'
 
 function JobAdvertisement({ jobAdvertisement }) {
